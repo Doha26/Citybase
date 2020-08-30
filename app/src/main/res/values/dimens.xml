@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_size_nano">10sp</dimen>
+    <dimen name="font_size_micro">12sp</dimen>
+    <dimen name="font_size_small">14sp</dimen>
+    <dimen name="font_size_medium">16sp</dimen>
+    <dimen name="font_size_normal">18sp</dimen>
+    <dimen name="font_size_large">20sp</dimen>
+    <dimen name="font_size_xlarge">22sp</dimen>
+    <dimen name="font_size_xxLarge">26sp</dimen>
+    <dimen name="font_size_35sp">35sp</dimen>
+    <dimen name="font_size_40sp">45sp</dimen>
+    <dimen name="font_size_splash">40sp</dimen>
+
+    <dimen name="space_2dp">2dp</dimen>
+    <dimen name="space_4dp">4dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_10dp">10dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_20dp">20dp</dimen>
+    <dimen name="space_24dp">24dp</dimen>
+    <dimen name="space_30dp">30dp</dimen>
+    <dimen name="space_32dp">32dp</dimen>
+    <dimen name="space_35dp">35dp</dimen>
+    <dimen name="space_40dp">40dp</dimen>
+    <dimen name="space_50dp">50dp</dimen>
+
+    <dimen name="spacing_control_half">@dimen/space_2dp</dimen>
+    <dimen name="spacing_control">@dimen/space_4dp</dimen>
+    <dimen name="spacing_standard">@dimen/space_8dp</dimen>
+    <dimen name="spacing_middle">@dimen/space_10dp</dimen>
+    <dimen name="spacing_standard_new">@dimen/space_16dp</dimen>
+    <dimen name="spacing_large">@dimen/space_24dp</dimen>
+    <dimen name="spacing_xlarge">@dimen/space_32dp</dimen>
+    <dimen name="spacing_xxLarge">@dimen/space_40dp</dimen>
+</resources>

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Citybase</string>
     <string name="lbl_search">Ex: DE</string>
+    <string name="sydney">Sydney, AU</string>
+    <string name="lat_long_ex">Lat : 9.222 , Lng : -2.876</string>
 </resources>

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/app_background">
 
@@ -64,10 +65,13 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginStart="@dimen/spacing_standard_new"
+        android:layout_marginEnd="@dimen/spacing_standard_new"
         android:id="@+id/rvSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
+        tools:listitem="@layout/item_search_result"
         android:overScrollMode="never"
         android:paddingTop="@dimen/space_35dp" />
 </LinearLayout>
