@@ -11,13 +11,13 @@ object Dependencies {
     const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
     const val gradle = "com.android.tools.build:gradle:4.0.0"
     const val ktLint = "org.jlleitschuh.gradle:ktlint-gradle:9.2.1"
-    const val materialDesign = "com.google.android.material:material:1.1.0"
     const val gson = "com.google.code.gson:gson:2.8.5"
 }
 
 object Lifecycle {
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    const val extensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
 }
 
 object Navigation {

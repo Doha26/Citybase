@@ -62,6 +62,7 @@ dependencies {
     // Architecture Components
     implementation(Lifecycle.viewModel)
     implementation(Lifecycle.liveData)
+    implementation(Lifecycle.extensions)
 
     // Navigation
     implementation(Navigation.navigationFragment)
@@ -70,6 +71,7 @@ dependencies {
     // Others
     implementation(Dependencies.gson)
     implementation(Google.googleMap)
+
 
     // Testing
     testImplementation(Testing.core)
