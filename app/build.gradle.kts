@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("org.jlleitschuh.gradle.ktlint")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -19,6 +20,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures.viewBinding = true
+    buildFeatures.dataBinding = true
 
     buildTypes {
         getByName("release") {

@@ -24,6 +24,7 @@ object Navigation {
     const val navigationPlugin = "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.+"
     const val navigationFragment = "android.arch.navigation:navigation-fragment-ktx:1.0.+"
     const val navigationUI = "android.arch.navigation:navigation-ui-ktx:1.0.+"
+    const val safeArgs = "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.+"
 }
 
 object Coroutines {
@@ -39,6 +40,6 @@ object Android {
 }
 
 object Google {
-    const val googleMap = "com.google.android.gms:play-services-maps:16.0.0"
+    const val googleMap = "com.google.android.gms:play-services-maps:17.0.0"
 }
 
