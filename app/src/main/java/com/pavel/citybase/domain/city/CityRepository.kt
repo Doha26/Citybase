@@ -1,5 +1,7 @@
 package com.pavel.citybase.domain.city
 
+import android.util.Log
+
 class CityRepository(private val daoImpl: CityDAOImpl) {
     var cities: ArrayList<City> = ArrayList(daoImpl.cities);
 
@@ -14,8 +16,14 @@ class CityRepository(private val daoImpl: CityDAOImpl) {
 
         // If the binary search did'nt find the element ( - 1 returned) , then apply array filter to get entries that match the given query
         if (resultSearchPosition == -1) {
-            resultCities = ArrayList(cities.filter {"${it.name}, ${it.country}".startsWith(query, false) }) // Search is case sensitive
+            resultCities = ArrayList(cities.filter {
+                "${it.name}, ${it.country}".startsWith(
+                    query,
+                    false
+                )
+            }) // Search is case sensitive
         } else {
+            //Log.d("NOT_MOIN_1",cities.elementAt(resultSearchPosition).toString())
             // if the binary search return the element, only return the element
             val city: City = cities.elementAt(resultSearchPosition);
             resultCities.clear()
@@ -29,11 +37,12 @@ class CityRepository(private val daoImpl: CityDAOImpl) {
 
         var high = cityList.size - 1;  // the Max index of the list
 
-        var mid = (low + high) / 2;  // Divide the List in two parts to get the middle then move the search accordingly to if the element is on left on right
+        var mid =
+            (low + high) / 2;  // Divide the List in two parts to get the middle then move the search accordingly to if the element is on left on right
 
-        while (low <= high && !cityList.get(mid).equals(searchValue)) {  // While the element is not found ? perform search by moving from low to middle
-
-            if (cityList.get(mid).country.compareTo(searchValue) < 0) {
+        while (low <= high && !cityList.get(mid).name.equals(searchValue)) {  // While the element is not found ? perform search by moving from low to middle
+            val expression = "${cityList.get(mid).name} , ${cityList.get(mid).country}"
+            if (expression.compareTo(searchValue) < 0) {
                 low = mid + 1;
             } else {
                 high = mid - 1;

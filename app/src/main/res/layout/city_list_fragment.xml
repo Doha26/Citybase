@@ -56,7 +56,6 @@
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchViewCity"
             style="@style/EditSearchStyle"
-            android:focusable="false"
             app:iconifiedByDefault="false"
             app:queryBackground="@android:color/transparent"
             app:queryHint="@string/lbl_search" />
