@@ -1,4 +1,4 @@
-package backbase.assignment.ui
+package com.pavel.citybase.ui.base
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
@@ -8,9 +8,7 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 abstract class BaseFragment<out V : ViewModel> : Fragment() {
-
   protected abstract val cityListViewModel: V
-
 }
 
 inline fun <reified V : ViewModel> BaseFragment<V>.factoryViewModel(noinline factory: ViewModelFactory<V>) =

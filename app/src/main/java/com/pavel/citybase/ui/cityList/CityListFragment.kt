@@ -9,8 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.NavHost
 import androidx.recyclerview.widget.LinearLayoutManager
-import backbase.assignment.ui.BaseFragment
-import backbase.assignment.ui.factoryViewModel
+import com.pavel.citybase.ui.base.BaseFragment
+import com.pavel.citybase.ui.base.factoryViewModel
 import com.pavel.citybase.R
 import com.pavel.citybase.databinding.CityListFragmentBinding
 import com.pavel.citybase.domain.city.City
@@ -70,11 +70,11 @@ class CityListFragment : BaseFragment<CityListViewModel>() {
                 }
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
-                    // viewModel.search(query)
+                    query?.let { cityListViewModel.performSearch(it) }
                     return false
                 }
             })
-            //setOnSearchClickListener { viewModel.search(query.toString()) }
+            setOnSearchClickListener { cityListViewModel.performSearch(query.toString()) }
             isIconified = false
         }
     }

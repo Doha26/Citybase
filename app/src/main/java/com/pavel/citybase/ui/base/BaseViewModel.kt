@@ -1,4 +1,4 @@
-package backbase.assignment.ui
+package com.pavel.citybase.ui.base
 
 import androidx.lifecycle.ViewModel
 import com.pavel.citybase.LoggingExceptionHandler
