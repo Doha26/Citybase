@@ -24,6 +24,7 @@
     <dimen name="space_35dp">35dp</dimen>
     <dimen name="space_40dp">40dp</dimen>
     <dimen name="space_50dp">50dp</dimen>
+    <dimen name="space_60dp">60dp</dimen>
 
     <dimen name="spacing_control_half">@dimen/space_2dp</dimen>
     <dimen name="spacing_control">@dimen/space_4dp</dimen>

@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/google_Map_mFragment"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:tag="mapFragment" />
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_60dp">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMenuMain"
+                android:layout_width="@dimen/space_40dp"
+                android:layout_height="@dimen/space_40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_middle"
+                android:background="@drawable/bg_circle_white"
+                android:padding="@dimen/spacing_control"
+                android:rotation="180"
+                android:src="@drawable/ic_keyboard_arrow_right" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_toEndOf="@+id/ivMenuMain"
+                android:text="@string/sydney"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_xlarge" />
+        </RelativeLayout>
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/google_Map_mFragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tag="mapFragment" />
+    </LinearLayout>
+
+</layout>

@@ -4,32 +4,25 @@
     <RelativeLayout
         android:id="@+id/searchItemLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="?attr/selectableItemBackground"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardImg"
-            android:layout_width="@dimen/space_50dp"
-            android:layout_height="@dimen/space_50dp"
-            android:layout_margin="@dimen/spacing_standard"
-            app:cardCornerRadius="@dimen/spacing_standard">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivImgSong"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/city_variant_outline" />
-        </androidx.cardview.widget.CardView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImgSong"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/space_16dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/city_variant_outline" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvCityName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_standard"
+            android:layout_marginStart="@dimen/space_16dp"
             android:layout_marginTop="@dimen/spacing_middle"
-            android:layout_toEndOf="@id/cardImg"
+            android:layout_toEndOf="@id/ivImgSong"
             android:text="@string/sydney"
             android:textColor="@color/textColorPrimary"
             android:textSize="@dimen/font_size_normal"
@@ -40,11 +33,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvCityName"
-            android:layout_alignBottom="@id/cardImg"
-            android:layout_marginStart="@dimen/spacing_standard"
+            android:layout_alignBottom="@id/ivImgSong"
+            android:layout_marginStart="@dimen/space_16dp"
             android:layout_marginTop="@dimen/spacing_control"
             android:layout_marginBottom="@dimen/spacing_control"
-            android:layout_toEndOf="@id/cardImg"
+            android:layout_toEndOf="@id/ivImgSong"
             android:gravity="bottom"
             android:text="@string/lat_long_ex"
             android:textColor="@color/textColorSecondary"
