@@ -1,26 +1,19 @@
 package com.pavel.citybase.ui.cityList
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
-import com.pavel.citybase.R
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.adapters.SearchViewBindingAdapter.setOnQueryTextListener
 import androidx.lifecycle.Observer
-import androidx.lifecycle.observe
 import androidx.navigation.NavHost
 import androidx.recyclerview.widget.LinearLayoutManager
 import backbase.assignment.ui.BaseFragment
 import backbase.assignment.ui.factoryViewModel
+import com.pavel.citybase.R
 import com.pavel.citybase.databinding.CityListFragmentBinding
 import com.pavel.citybase.domain.city.City
-import com.pavel.citybase.domain.city.CityDAO
 import com.pavel.citybase.domain.city.CityDAOImpl
 import com.pavel.citybase.domain.city.CityRepository
 import com.pavel.citybase.ui.cityDisplay.MapParams
@@ -78,7 +71,7 @@ class CityListFragment : BaseFragment<CityListViewModel>() {
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     // viewModel.search(query)
-                    return true
+                    return false
                 }
             })
             //setOnSearchClickListener { viewModel.search(query.toString()) }
