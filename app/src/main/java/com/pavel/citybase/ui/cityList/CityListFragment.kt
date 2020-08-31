@@ -1,11 +1,13 @@
 package com.pavel.citybase.ui.cityList
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.pavel.citybase.R
 import androidx.databinding.DataBindingUtil
@@ -14,32 +16,36 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.navigation.NavHost
 import androidx.recyclerview.widget.LinearLayoutManager
+import backbase.assignment.ui.BaseFragment
+import backbase.assignment.ui.factoryViewModel
 import com.pavel.citybase.databinding.CityListFragmentBinding
 import com.pavel.citybase.domain.city.City
 import com.pavel.citybase.domain.city.CityDAO
+import com.pavel.citybase.domain.city.CityDAOImpl
 import com.pavel.citybase.domain.city.CityRepository
 import com.pavel.citybase.ui.cityDisplay.MapParams
 
- class CityListFragment : Fragment() {
+class CityListFragment : BaseFragment<CityListViewModel>() {
 
     private lateinit var binding: CityListFragmentBinding
-    private lateinit var cityListViewModel: CityListViewModel
+
+    override val cityListViewModel: CityListViewModel by factoryViewModel {
+        val cityDAOImpl = CityDAOImpl(context!!)
+        val repository = CityRepository(cityDAOImpl)
+        CityListViewModel(repository)
+    }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.city_list_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.city_list_fragment, container, false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val cityDAO = CityDAO()
-        val repository = CityRepository(cityDAO)
-        val factory = CityListViewModelFactory(repository)
-        cityListViewModel = ViewModelProvider(this, factory).get(CityListViewModel::class.java)
         binding.mViewModel = cityListViewModel
         binding.lifecycleOwner = this
     }
@@ -47,20 +53,19 @@ import com.pavel.citybase.ui.cityDisplay.MapParams
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView(view)
-        //setupSearchView(view)
+        setupSearchView(view)
     }
 
     fun initRecyclerView(view: View) {
         binding.rvListCities.layoutManager = LinearLayoutManager(view.context)
         binding.rvListCities.apply {
             layoutManager = LinearLayoutManager(view.context)
-            if(this@CityListFragment::cityListViewModel.isInitialized){
-                cityListViewModel.cities?.observe(this@CityListFragment, Observer {
-                    binding.rvListCities.adapter =
-                        CityListAdapter(it, { selectedIem: City -> displayOnMap(selectedIem) })
-                })
-            }
+            cityListViewModel.cities.observe(this@CityListFragment, Observer {
+                binding.rvListCities.adapter =
+                    CityListAdapter(it, { selectedIem: City -> displayOnMap(selectedIem) })
+            })
         }
+
     }
 
     private fun setupSearchView(view: View) {
@@ -72,7 +77,7 @@ import com.pavel.citybase.ui.cityDisplay.MapParams
                 }
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
-                   // viewModel.search(query)
+                    // viewModel.search(query)
                     return true
                 }
             })
@@ -86,5 +91,6 @@ import com.pavel.citybase.ui.cityDisplay.MapParams
             CityListFragmentDirections.displayOnMap(MapParams(it.name, it.coord.lat, it.coord.lat))
         )
     }
+
 
 }

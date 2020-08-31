@@ -1,7 +1,7 @@
 package com.pavel.citybase.domain.city
 
-import com.pavel.citybase.domain.city.CityDAO
+import android.content.Context
 
-class CityRepository (private val dao: CityDAO){
-    val cities = dao.getAllCities();
+class CityRepository (private val daoImpl: CityDAOImpl){
+    val cities = daoImpl.cities;
 }
