@@ -3,6 +3,9 @@ object Testing {
     const val jUnit = "junit:junit:4.13"
     const val extJUnit = "androidx.test.ext:junit:1.1.1"
     const val espresso = "androidx.test.espresso:espresso-core:3.2.0"
+    const val espressoContrib = "com.android.support.test.espresso:espresso-contrib:3.0.2"
+    const val testRule = "com.android.support.test:rules:1.0.2"
+    const val testRunner = "com.android.support.test:runner:1.0.2"
     const val core = "androidx.arch.core:core-testing:2.1.0"
 }
 

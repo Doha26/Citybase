@@ -83,6 +83,9 @@ dependencies {
     // Android Testing
     androidTestImplementation(Testing.extJUnit)
     androidTestImplementation(Testing.espresso)
+    androidTestImplementation(Testing.espressoContrib)
+    androidTestImplementation(Testing.testRunner)
+    androidTestImplementation(Testing.testRule)
 
 
 
