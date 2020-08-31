@@ -1,11 +1,7 @@
 package com.pavel.citybase.domain.city
-
-import androidx.lifecycle.LiveData
-import com.pavel.citybase.R
-
-
 import android.content.Context
 import com.google.gson.Gson
+import com.pavel.citybase.R
 
 
 interface CityDAO {
