@@ -1,6 +1,5 @@
 package com.pavel.citybase
 
-import android.content.Context
 import androidx.test.InstrumentationRegistry
 import com.pavel.citybase.domain.city.*
 import kotlinx.coroutines.runBlocking
