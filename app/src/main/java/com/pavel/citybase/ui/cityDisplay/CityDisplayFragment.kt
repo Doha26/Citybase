@@ -22,7 +22,7 @@ import kotlinx.android.parcel.Parcelize
 class CityDisplayFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var binding: FragmentCityDisplayBinding
-    private val zoom = 12f
+    private val zoom = 16f
 
 
     override fun onCreateView(

@@ -21,8 +21,10 @@ import com.pavel.citybase.ui.cityDisplay.MapParams
 
 class CityListFragment : BaseFragment<CityListViewModel>() {
 
+    // Binder initialisation for the current fragment
     private lateinit var binding: CityListFragmentBinding
 
+    // View model initialisation
     override val cityListViewModel: CityListViewModel by factoryViewModel {
         val cityDAOImpl = CityDAOImpl(context!!)
         val repository = CityRepository(cityDAOImpl)
@@ -50,15 +52,19 @@ class CityListFragment : BaseFragment<CityListViewModel>() {
         setupSearchView(view)
     }
 
+    // Init recycler view that will display list of cities
     fun initRecyclerView(view: View) {
         binding.rvListCities.layoutManager = LinearLayoutManager(view.context)
         binding.rvListCities.apply {
             layoutManager = LinearLayoutManager(view.context)
             cityListViewModel.cities.observe(this@CityListFragment, Observer {
-                if (it.size === 0) {
+
+                // if the search return no result, then display 'No result found' text
+                if (it.isEmpty()) {
                     binding.tvNoResult.visibility = View.VISIBLE
                     binding.rvListCities.visibility = View.GONE
-                } else {
+
+                } else { // Else display city list
                     binding.tvNoResult.visibility = View.GONE
                     binding.rvListCities.visibility = View.VISIBLE
                 }
@@ -69,6 +75,7 @@ class CityListFragment : BaseFragment<CityListViewModel>() {
 
     }
 
+    // Setup searchview
     private fun setupSearchView(view: View) {
         binding.searchViewCity.apply {
             setOnQueryTextListener(object : SearchView.OnQueryTextListener,
@@ -87,14 +94,15 @@ class CityListFragment : BaseFragment<CityListViewModel>() {
         }
     }
 
-    private fun displayOnMap(it: City) {
+    // Receive a given city and navigate to map fragment with the given city as parameter
+    private fun displayOnMap(city: City) {
         (activity as NavHost).navController.navigate(
             CityListFragmentDirections.displayOnMap(
                 MapParams(
-                    it.name,
-                    it.country,
-                    it.coord.lat,
-                    it.coord.lat
+                    city.name,
+                    city.country,
+                    city.coord.lat,
+                    city.coord.lat
                 )
             )
         )
