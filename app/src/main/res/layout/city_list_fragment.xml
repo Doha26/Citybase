@@ -61,17 +61,37 @@
             app:queryBackground="@android:color/transparent"
             app:queryHint="@string/lbl_search" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvListCities"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_standard_new"
-            android:layout_marginTop="@dimen/space_16dp"
             android:layout_marginEnd="@dimen/spacing_standard_new"
-            android:clipToPadding="false"
-            android:overScrollMode="never"
-            android:paddingBottom="@dimen/space_35dp"
-            tools:listitem="@layout/item_search_result" />
+            android:layout_marginTop="@dimen/space_16dp"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNoResult"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:text="@string/no_result_found"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_normal"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListCities"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/space_16dp"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingBottom="@dimen/space_35dp"
+                tools:listitem="@layout/item_search_result" />
+        </RelativeLayout>
     </LinearLayout>
 
 </layout>

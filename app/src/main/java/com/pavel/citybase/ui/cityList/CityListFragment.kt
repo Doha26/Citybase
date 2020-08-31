@@ -1,5 +1,6 @@
 package com.pavel.citybase.ui.cityList
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -54,6 +55,13 @@ class CityListFragment : BaseFragment<CityListViewModel>() {
         binding.rvListCities.apply {
             layoutManager = LinearLayoutManager(view.context)
             cityListViewModel.cities.observe(this@CityListFragment, Observer {
+                if (it.size === 0) {
+                    binding.tvNoResult.visibility = View.VISIBLE
+                    binding.rvListCities.visibility = View.GONE
+                } else {
+                    binding.tvNoResult.visibility = View.GONE
+                    binding.rvListCities.visibility = View.VISIBLE
+                }
                 binding.rvListCities.adapter =
                     CityListAdapter(it, { selectedIem: City -> displayOnMap(selectedIem) })
             })
@@ -81,7 +89,14 @@ class CityListFragment : BaseFragment<CityListViewModel>() {
 
     private fun displayOnMap(it: City) {
         (activity as NavHost).navController.navigate(
-            CityListFragmentDirections.displayOnMap(MapParams(it.name, it.country,it.coord.lat, it.coord.lat))
+            CityListFragmentDirections.displayOnMap(
+                MapParams(
+                    it.name,
+                    it.country,
+                    it.coord.lat,
+                    it.coord.lat
+                )
+            )
         )
     }
 
