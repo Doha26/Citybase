@@ -30,31 +30,32 @@
                 android:padding="@dimen/spacing_control"
                 android:src="@drawable/ic_filter" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:layout_toEndOf="@+id/ivMenuMain"
+                android:text="@string/search_a_city"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_xlarge" />
+
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivMore"
+                android:id="@+id/ivMenuMore"
                 android:layout_width="@dimen/space_30dp"
                 android:layout_height="@dimen/space_30dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/spacing_middle"
+                android:padding="@dimen/spacing_control"
                 android:src="@drawable/ic_more_vert" />
-        </RelativeLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_standard_new"
-            android:layout_marginTop="@dimen/spacing_middle"
-            android:text="@string/search_a_city"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="@dimen/font_size_xlarge" />
+        </RelativeLayout>
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchViewCity"
             style="@style/EditSearchStyle"
-            android:layout_marginTop="@dimen/spacing_standard_new"
-            android:drawableTint="@color/textColorSecondary"
             android:focusable="false"
             app:iconifiedByDefault="false"
             app:queryBackground="@android:color/transparent"

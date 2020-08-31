@@ -14,7 +14,7 @@ class CityRepository(private val daoImpl: CityDAOImpl) {
 
         // If the binary search did'nt find the element ( - 1 returned) , then apply array filter to get entries that match the given query
         if (resultSearchPosition == -1) {
-            resultCities = ArrayList(cities.filter { it.name.startsWith(query, false) })
+            resultCities = ArrayList(cities.filter {"${it.name}, ${it.country}".startsWith(query, false) }) // Search is case sensitive
         } else {
             // if the binary search return the element, only return the element
             val city: City = cities.elementAt(resultSearchPosition);

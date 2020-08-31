@@ -1,9 +1,10 @@
-package com.pavel.citybase
+package com.pavel.citybase.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavHost
 import androidx.navigation.findNavController
+import com.pavel.citybase.R
 
 class MainActivity : AppCompatActivity(), NavHost {
 
