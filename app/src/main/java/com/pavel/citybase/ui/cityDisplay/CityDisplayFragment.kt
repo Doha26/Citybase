@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavHost
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -32,7 +33,6 @@ class CityDisplayFragment : Fragment(), OnMapReadyCallback {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_city_display, container, false)
         return binding.root
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -41,6 +41,7 @@ class CityDisplayFragment : Fragment(), OnMapReadyCallback {
         val mapFragment =
             childFragmentManager.findFragmentById(R.id.google_Map_mFragment) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
+        binding.ivBack.setOnClickListener { view -> (activity as NavHost).navController.popBackStack() }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
