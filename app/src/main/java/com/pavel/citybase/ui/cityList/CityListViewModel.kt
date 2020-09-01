@@ -27,7 +27,7 @@ class CityListViewModel(val cityRepository: CityRepository) : BaseViewModel(), O
     // this method take a query string as a parameter then perform search in the Main thread using Corotine
     fun performSearch(query: String) = viewModelScope.launch(Dispatchers.Main) {
         val searchResult: ArrayList<City> = cityRepository.search(query);
-        Log.d("TOKI", searchResult.size.toString())
+
         // Set the result that match the query
         _cities.value = searchResult.toMutableList()
     }
