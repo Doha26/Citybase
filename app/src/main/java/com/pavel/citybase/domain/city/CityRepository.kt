@@ -19,11 +19,10 @@ class CityRepository(private val daoImpl: CityDAOImpl) {
             resultCities = ArrayList(cities.filter {
                 "${it.name}, ${it.country}".startsWith(
                     query,
-                    false
+                    true
                 )
-            }) // Search is case sensitive
+            }) // Search is case insensitive
         } else {
-            //Log.d("NOT_MOIN_1",cities.elementAt(resultSearchPosition).toString())
             // if the binary search return the element, only return the element
             val city: City = cities.elementAt(resultSearchPosition);
             resultCities.clear()
@@ -40,7 +39,7 @@ class CityRepository(private val daoImpl: CityDAOImpl) {
         var mid =
             (low + high) / 2;  // Divide the List in two parts to get the middle then move the search accordingly to if the element is on left on right
 
-        while (low <= high && !cityList.get(mid).name.equals(searchValue)) {  // While the element is not found ? perform search by moving from low to middle
+        while (low <= high && !cityList.get(mid).name.equals(searchValue,true)) {  // While the element is not found ? perform search by moving from low to middle
             val expression = "${cityList.get(mid).name} , ${cityList.get(mid).country}"
             if (expression.compareTo(searchValue) < 0) {
                 low = mid + 1;

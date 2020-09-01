@@ -12,7 +12,7 @@
  ## Results
 - [x] Splashscreen
 - [x] Scrollable List displaying all cities in the Json file
-- [x] Search feature with case sensitive
+- [x] Search feature with case insensitive
 - [x] City Detail displayed on a google Map
 - [x] I have implemented a Binary search Algorithm to match requirements about time efficiency
 - [x] Documentation

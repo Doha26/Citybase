@@ -111,14 +111,14 @@ class MainActivityTest {
     }
 
     @Test
-    fun test_search_is_case_sensitive() {
+    fun test_search_is_case_insensitive() {
         onView(withId(R.id.searchViewCity))
-            .perform(typeSearchViewText("s"))
+            .perform(typeSearchViewText("ALB"))
         closeSoftKeyboard()
 
         //ASSERT
         onView(withId(R.id.rvListCities))
-            .check(matches(withItemCount(11)))
+            .check(matches(withItemCount(327)))
     }
 
     @Test
