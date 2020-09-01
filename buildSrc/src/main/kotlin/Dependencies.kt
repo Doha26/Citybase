@@ -3,6 +3,9 @@ object Testing {
     const val jUnit = "junit:junit:4.13"
     const val extJUnit = "androidx.test.ext:junit:1.1.1"
     const val espresso = "androidx.test.espresso:espresso-core:3.2.0"
+    const val espressoContrib = "com.android.support.test.espresso:espresso-contrib:3.0.2"
+    const val testRule = "com.android.support.test:rules:1.0.2"
+    const val testRunner = "com.android.support.test:runner:1.0.2"
     const val core = "androidx.arch.core:core-testing:2.1.0"
 }
 
@@ -11,19 +14,20 @@ object Dependencies {
     const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
     const val gradle = "com.android.tools.build:gradle:4.0.0"
     const val ktLint = "org.jlleitschuh.gradle:ktlint-gradle:9.2.1"
-    const val materialDesign = "com.google.android.material:material:1.1.0"
     const val gson = "com.google.code.gson:gson:2.8.5"
 }
 
 object Lifecycle {
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    const val extensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
 }
 
 object Navigation {
     const val navigationPlugin = "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.+"
     const val navigationFragment = "android.arch.navigation:navigation-fragment-ktx:1.0.+"
     const val navigationUI = "android.arch.navigation:navigation-ui-ktx:1.0.+"
+    const val safeArgs = "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.+"
 }
 
 object Coroutines {
@@ -39,6 +43,6 @@ object Android {
 }
 
 object Google {
-    const val googleMap = "com.google.android.gms:play-services-maps:16.0.0"
+    const val googleMap = "com.google.android.gms:play-services-maps:17.0.0"
 }
 

@@ -17,6 +17,7 @@ buildscript {
         classpath(Dependencies.kotlinGradle)
         classpath(Dependencies.ktLint)
         classpath(Navigation.navigationPlugin)
+        classpath(Navigation.safeArgs)
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

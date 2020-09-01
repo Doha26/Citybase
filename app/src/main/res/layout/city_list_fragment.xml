@@ -1,0 +1,96 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mViewModel"
+            type="com.pavel.citybase.ui.cityList.CityListViewModel" />
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_60dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMenuMain"
+                android:layout_width="@dimen/space_30dp"
+                android:layout_height="@dimen/space_30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_middle"
+                android:background="@drawable/bg_circle_white"
+                android:padding="@dimen/spacing_control"
+                android:src="@drawable/ic_filter" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:layout_toEndOf="@+id/ivMenuMain"
+                android:text="@string/search_a_city"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_xlarge" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMenuMore"
+                android:layout_width="@dimen/space_30dp"
+                android:layout_height="@dimen/space_30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/spacing_control"
+                android:src="@drawable/ic_more_vert" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewCity"
+            style="@style/EditSearchStyle"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="@string/lbl_search" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/spacing_standard_new"
+            android:layout_marginEnd="@dimen/spacing_standard_new"
+            android:layout_marginTop="@dimen/space_16dp"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNoResult"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:text="@string/no_result_found"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/font_size_normal"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListCities"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_standard_new"
+                android:layout_marginTop="@dimen/space_16dp"
+                android:layout_marginEnd="@dimen/spacing_standard_new"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingBottom="@dimen/space_35dp"
+                tools:listitem="@layout/item_search_result" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

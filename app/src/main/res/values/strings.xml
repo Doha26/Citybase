@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Citybase</string>
+    <string name="lbl_search">Ex: DE</string>
+    <string name="sydney">Sydney, AU</string>
+    <string name="lat_long_ex">Lat : 9.222 , Lng : -2.876</string>
+    <string name="search_a_city">Search a City</string>
+    <string name="map_marker_title">Marker in %s</string>
+    <string name="no_result_found">No result found</string>
 </resources>
