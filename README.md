@@ -23,8 +23,6 @@
 ##  Preview
 ![App-demo](./app/src/demo/demo2.png)
 
-
-
 ### Used
 
  - [Gson](https://github.com/google/gson)
@@ -32,7 +30,8 @@
  - [Kotlin DSL Plugin ( to manage dependencies )](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
  - [Android Jetpack Librairies(LiveData, ViewModel,DataBinding, Layout, Fragment)](https://developer.android.com/jetpack)
  - [Coroutines (For asynchronous background processing)](https://kotlinlang.org/docs/reference/coroutines-overview.html)
- 
+ - [Junit4 (For unit testing))](https://junit.org/junit4/)
+
  ## Get Started
  
  #### 1. Clone the Repo
@@ -48,7 +47,17 @@
 $ Sync and build the project
 
  ```
- 
+
+  ## Dev environment
+  - Android Studio 4.0.1 (Stable version)
+  - JDK 1.8
+  - Gradle 4.0.0
+
+## Test Results
+  - 13 of 13 Tests passed
+
+![TestResult](./app/src/demo/tests.png)
+
  ### Author
 
 *	[Pavel Foujeu](mailto:foujeupavel@gmail.com)  
