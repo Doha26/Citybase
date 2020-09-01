@@ -21,7 +21,7 @@
 
 
 ##  Preview
-![App-demo](./app/src/demo/demo1.png)
+![App-demo](./app/src/demo/demo2.png)
 
 
 
@@ -52,15 +52,12 @@ $ Sync and build the project
  ### Author
 
 *	[Pavel Foujeu](mailto:foujeupavel@gmail.com)  
- 
-   [![Twitter: Pavel_FFP](https://img.shields.io/twitter/follow/Pavel_FFP?style=social)](https://twitter.com/Pavel_FFP)
    [![Linkedin: pavel-foujeu-8a8992142](https://img.shields.io/badge/-Pavel%20Foujeu%20-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/pavel-foujeu-8a8992142/)](https://www.linkedin.com/in/pavel-foujeu-8a8992142/)
    [![GitHub Doha26](https://img.shields.io/github/followers/Doha26?label=follow&style=social)](https://github.com/Doha26)
 
 
  
  ### Done with React-native
- 
  *	[Instagram Clone ](https://github.com/Doha26/Instagram-clone)
  *	[Facebook challenge ](https://github.com/Doha26/Facebook-React-native)
 
