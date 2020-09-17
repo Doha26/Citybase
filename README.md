@@ -5,7 +5,7 @@
 
 # CityBase
 
->I have been asked to build a mobile application that implement a fast runtime search algorithm to filter  
+>A mobile application that implement a fast runtime search algorithm to filter  
 > a large json file containing json object where each object represent a city.  
 > I decided to build a MVVM kotlin application named `CityBase`.
  
