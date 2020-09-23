@@ -14,10 +14,10 @@
 - [x] Scrollable List displaying all cities in the Json file
 - [x] Search feature with case insensitive
 - [x] City Detail displayed on a google Map
-- [x] I have implemented a Binary search Algorithm to match requirements about time efficiency
+- [x] Binary search Algorithm with good time efficiency
 - [x] Documentation
 - [x] Responsive and support Device rotation
-- [x] Implemented Unit test that match requiremets and ensure that app behave as expected
+- [x] Implemented Unit test to ensure that app behave as expected
 
 
 ##  Preview
@@ -44,6 +44,8 @@
  
  $ Accept SDK configuration to support your local SDK Location 
  
+$ Go to app/src/debug/res/value/google_maps_api.xml and replace `YOUR_GOOGLE_MAP_KEY_HERE` with your Google maps Api key
+
 $ Sync and build the project
 
  ```
